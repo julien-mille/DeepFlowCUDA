@@ -501,8 +501,8 @@ __global__ void dataTermKernel(
         *pa11 += (ti*(*pIx)*(*pIx)).sum();
         *pa12 += (ti*(*pIx)*(*pIy)).sum();
         *pa22 += (ti*(*pIy)*(*pIy)).sum();
-        *pb1 -= (ti*(*pIx)*pIz[j]).sum();
-        *pb2 -= (ti*(*pIy)*pIz[j]).sum();
+        *pb1 -= (ti*(*pIx)*(*pIz)).sum();
+        *pb2 -= (ti*(*pIy)*(*pIz)).sum();
     }
 
     // Gradient constancy

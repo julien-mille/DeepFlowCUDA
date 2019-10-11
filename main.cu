@@ -55,7 +55,8 @@ int main(int argc, char ** argv)
     cv::Mat img0, img1, gtflow, flow, flowRefined;
 
     string dataDir = "./data/";
-    string outputDir = "./output/";
+    string outputDir = "./";
+    string outputPath = outputDir + "refinedflow_0001.flo";
     
     img0 = cv::imread(dataDir + "frame_0001.jpg", cv::IMREAD_COLOR);
     if (img0.data==nullptr)
@@ -97,11 +98,13 @@ int main(int argc, char ** argv)
     cout<<"Distance = "<<L2Distance(flow, gtflow, dist)<<endl;
     cout<<"Distance refined = "<<L2Distance(flowRefined, gtflow, dist)<<endl;
 
-    if (cv::writeOpticalFlow(outputDir + "refinedflow_0001.flo", flowRefined)==false)
+    if (cv::writeOpticalFlow(outputPath, flowRefined)==false)
     {
-        cout<<"Failed to write refined flow"<<endl;
+        cout<<"Failed to write refined flow to"<<outputPath<<endl;
         return -1;
     }
+    else
+        cout<<"Refined flow written to "<<outputPath<<endl;
 
     return 0;
 }

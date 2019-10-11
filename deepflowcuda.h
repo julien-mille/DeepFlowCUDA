@@ -107,7 +107,13 @@ class DeepFlowCuda
     void computeDataTerm();
     void computeMatchingTerm();
 
+    // The local smoothness weight is not described in the initial DeepFlow paper
+    // [P. Weinzaepfel, J. Revaud, Z. Harchaoui and C. Schmid. DeepFlow: Large displacement optical flow with deep matching. ICCV 2013]
+    // Instead it is mentioned in section 4.3 of the extended IJCV paper
+    // [J. Revaud, P. Weinzaepfel, Z. Harchaoui and  C. Schmid. DeepMatching: hierarchical deformable dense matching. IJCV 2016]
+    // See ref [Wedel et al 2009] or [Xu et al 2012]
     void computeSmoothnessWeight();
+    
     void computeSmoothnessTerm();
     
     void RedBlackSOR();
