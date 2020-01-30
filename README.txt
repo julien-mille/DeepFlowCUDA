@@ -1,4 +1,4 @@
-This is an C++/OpenCV/CUDA port of the DeepFlow C library, associated to the following paper:
+This is a C++/OpenCV/CUDA port of the DeepFlow C library, associated to the following paper:
 [P. Weinzaepfel, J. Revaud, Z. Harchaoui and C. Schmid. DeepFlow: Large displacement optical flow with deep matching. ICCV 2013]
 See http://lear.inrialpes.fr/src/deepflow/
 
